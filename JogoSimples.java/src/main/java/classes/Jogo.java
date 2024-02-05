@@ -10,15 +10,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class Jogo extends JFrame{
+public class Jogo extends JFrame{//Criação de interface gráfica
         private static final long serialVersionUID = 1L;
         private final int TEMPO = 1;
     //num é um número aleatório entre um e 3
     int num;
     //As três imagens
-    ImageIcon copo = new ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\JogoSimples.java\\src\\main\\java\\classes\\imagens\\copoParaBaixo.jpg");//Copo abaixado
-    ImageIcon copoe = new ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\JogoSimples.java\\src\\main\\java\\classes\\imagens\\copoSemBorracha.jpg");//Copo levantado sem o gato
-    ImageIcon copoc = new ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\JogoSimples.java\\src\\main\\java\\classes\\imagens\\copoComBorracha.jpg");//Copo levantado com o gato
+    ImageIcon copo = new ImageIcon("src\\main\\java\\classes\\imagens\\copoParaBaixo.jpg");//Copo abaixado
+    ImageIcon copoe = new ImageIcon("src\\main\\java\\classes\\imagens\\copoSemBorracha.jpg");//Copo levantado sem o gato
+    ImageIcon copoc = new ImageIcon("src\\main\\java\\classes\\imagens\\copoComBorracha.jpg");//Copo levantado com o gato
     JButton btn1;
     JButton btn2;
     JButton btn3;
@@ -84,11 +84,15 @@ public class Jogo extends JFrame{
         iniciaJogo();
     }
 
-    //Método main, instanciamendo da classe para teste
+    /*Método principal para inicar a aplicação,
+     criando uma instância da classe 'Jogo' e 
+     tornando visível*/
     public static void main(String[] args){
         new Jogo().setVisible(true);
     }
-        //Classe interna que implementa Action Listener
+        /*Classe interna que implementa Action Listener para lidar
+         com cliques nos botões e verificar se a escolha do jogador
+         está correta*/
         public class Action_button1 implements ActionListener{
             public void actionPerformed(ActionEvent e){
                 if (num == 1){
@@ -130,7 +134,9 @@ public class Jogo extends JFrame{
                 }
             }
         }
-        //Inicia JOGO
+        /*Método privado que reinicia o jogo, definindo a
+         imagem padrão nos botões e gerando um novo número
+         aleatório*/
         private void iniciaJogo(){
             //ícone Default
             btn1.setIcon(copo);
